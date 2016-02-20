@@ -1,4 +1,4 @@
-FROM mafzaal/hadoop-base:0.1.0
+FROM mafzaal/hadoop-base:0.2.0
 
 MAINTAINER Muhammad Afzaal <mafzaal@gmail.com>
 

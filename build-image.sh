@@ -1,7 +1,7 @@
 #!/bin/bash
 
 image=$1
-tag="0.1.0"
+tag="0.2.0"
 
 if [ $# = 0 ]
 then
@@ -9,12 +9,14 @@ then
 	exit 1
 fi
 
+#docker respoistory name
+respoistory=mafzaal
 
 # founction for delete images
 function docker_rmi()
 {
-	echo -e "\n\ndocker rmi mafzaal/$1:$tag"
-	docker rmi mafzaal/$1:$tag
+	echo -e "\n\ndocker rmi $respoistory/$1:$tag"
+	docker rmi $respoistory/$1:$tag
 }
 
 
@@ -22,8 +24,8 @@ function docker_rmi()
 function docker_build()
 {
 	cd $1
-	echo -e "\n\ndocker build -t mafzaal/$1:$tag ."
-	docker build -t mafzaal/$1:$tag .
+	echo -e "\n\ndocker build -t $respoistory/$1:$tag ."
+	docker build -t $respoistory/$1:$tag .
 	cd ..
 }
 
@@ -31,7 +33,7 @@ function docker_build()
 echo -e "\ndocker rm -f slave1 slave2 master"
 docker rm -f slave1 slave2 master
 
-docker images >images.txt
+docker images > images.txt
 
 if [ $image == "serf-dnsmasq" ]
 then
