@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tag="0.1.0"
+tag="0.2.0"
 
 # N is the node number of the cluster
 N=$1
