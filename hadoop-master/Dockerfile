@@ -1,6 +1,6 @@
-FROM kiwenlau/hadoop-base:0.1.0
+FROM mafzaal/hadoop-base:0.1.0
 
-MAINTAINER KiwenLau <kiwenlau@gmail.com>
+MAINTAINER Muhammad Afzaal <mafzaal@gmail.com>
 
 # move all confugration files into container
 ADD files/* /tmp/
